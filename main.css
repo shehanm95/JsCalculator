@@ -1,0 +1,110 @@
+:root{
+    --body-back-color:gray;
+    --calc-outer-back-color:rgb(237, 237, 237);
+    --text-display-area-back-color:rgb(211, 211, 211);
+    --button-background-color:linear-gradient(to bottom, rgb(64, 154, 250) 5%,  rgb(7, 108, 215) 95%);
+    --num-button-background-color:linear-gradient(to bottom, rgb(20, 65, 112) 5%,  rgb(7, 19, 31) 95%);
+    --equal-button-background-color:linear-gradient(to bottom, rgb(0, 157, 50) 5%,  rgb(0, 95, 30) 95%);
+
+
+    --button-shadow:0px -1px 1px 0 rgb(169, 223, 255), 
+                    0px 1px 1px 0 rgb(133, 134, 135), 
+                    0px 3px 4px 0px rgb(79, 114, 158), 
+                    0 4px 4px 1px rgba(96, 96, 96, 0.611);
+
+
+    --main-text-color:black;
+    --sub-text-color:rgb(118, 118, 118);
+
+}
+
+body{
+height: 100vh;
+display: flex;
+background-color: var(--body-back-color);
+}
+
+.calc-outer-back{
+width: 300px;
+background-color: var(--calc-outer-back-color);
+border-radius: 20px;
+overflow: hidden;
+}
+
+.text-display-area{
+height: 300px;
+width: 100%;
+padding:10px 10px 3px 10px;
+background-color: var(--text-display-area-back-color);
+display: flex;
+align-items: flex-end;
+justify-content: end;
+flex-direction: column;
+flex-wrap: wrap;
+}
+
+.button-area{
+display: flex;
+flex-direction: column;
+padding:15px 30px;
+}
+
+.button-row{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+width: 100%;
+padding-bottom: 10px;
+}
+
+.button{
+border: 1px solid rgb(90, 139, 174);
+height:50px;
+width: 50px;
+display: inline-block;
+background: var(--button-background-color);
+border-radius: 10px;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: row;
+box-shadow:var(--button-shadow); 
+}
+
+.equal{
+background:var(--equal-button-background-color);
+}
+.num{
+background: var(--num-button-background-color);
+}
+.button P{
+color:white;
+font-weight: 500;
+padding-top: 12px;
+font-size: 2rem;
+}
+
+.main-text , .sub-text{
+    color:var(--main-text-color);
+    font-size: 35px;
+    font-weight: 500;
+    /* margin-bottom: 5px !important;
+    margin-right: 20px !important; */
+    display: block;
+    max-width: 100%;
+    text-align: right;
+    display: inline-block;
+    word-wrap: break-word;
+}
+.sub-text{
+    color:var(--sub-text-color);
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: -2px !important;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: end;
+}

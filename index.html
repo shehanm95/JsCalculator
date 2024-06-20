@@ -6,6 +6,7 @@
     <title>JsCalculator</title>
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
     </head>
 <body class="d-flex justify-content-center align-items-center">
     <div class="calc-outer-back">
@@ -48,39 +49,39 @@
                 </div>
             </div>
 
-                      <!-- row 3 -->
+                <!-- row 3 -->
 
-                      <div class="button-row">
-                        <div class="button num">
-                            <p>4</p> 
-                        </div>
-                        <div class="button num">
-                            <p>5</p> 
-                        </div>
-                        <div class="button num">
-                            <p>6</p> 
-                        </div>
-                        <div class="button" id="sub">
-                            <p>-</p> 
-                        </div>
-                    </div>
+                <div class="button-row">
+                <div class="button num">
+                    <p>4</p> 
+                </div>
+                <div class="button num">
+                    <p>5</p> 
+                </div>
+                <div class="button num">
+                    <p>6</p> 
+                </div>
+                <div class="button" id="sub">
+                    <p>-</p> 
+                </div>
+            </div>
         
-                      <!-- row 4 -->
+            <!-- row 4 -->
 
-                      <div class="button-row">
-                        <div class="button num">
-                            <p>1</p> 
-                        </div>
-                        <div class="button num">
-                            <p>2</p> 
-                        </div>
-                        <div class="button num">
-                            <p>3</p> 
-                        </div>
-                        <div class="button" id="plus">
-                            <p>+</p> 
-                        </div>
-                    </div>
+            <div class="button-row">
+            <div class="button num">
+                <p>1</p> 
+            </div>
+            <div class="button num">
+                <p>2</p> 
+            </div>
+            <div class="button num">
+                <p>3</p> 
+            </div>
+            <div class="button" id="plus">
+                <p>+</p> 
+            </div>
+        </div>
             <!-- row 5 -->
 
             <div class="button-row">
@@ -106,254 +107,7 @@
         </div>
     </div>
 </body>
-<style>
-    :root{
-        --body-back-color:gray;
-        --calc-outer-back-color:rgb(237, 237, 237);
-        --text-display-area-back-color:rgb(211, 211, 211);
-        --button-background-color:linear-gradient(to bottom, rgb(64, 154, 250) 5%,  rgb(7, 108, 215) 95%);
-        --num-button-background-color:linear-gradient(to bottom, rgb(20, 65, 112) 5%,  rgb(7, 19, 31) 95%);
-        --equal-button-background-color:linear-gradient(to bottom, rgb(0, 157, 50) 5%,  rgb(0, 95, 30) 95%);
-
-
-        --button-shadow:0px -1px 1px 0 rgb(169, 223, 255), 
-                        0px 1px 1px 0 rgb(133, 134, 135), 
-                        0px 3px 4px 0px rgb(79, 114, 158), 
-                        0 4px 4px 1px rgba(96, 96, 96, 0.611);
-    
-    
-        --main-text-color:black;
-        --sub-text-color:rgb(118, 118, 118);
-    
-    }
-
-body{
-    height: 100vh;
-    display: flex;
-    background-color: var(--body-back-color);
-}
-
-.calc-outer-back{
-    width: 300px;
-    background-color: var(--calc-outer-back-color);
-    border-radius: 20px;
-    overflow: hidden;
-}
-
-.text-display-area{
-    height: 300px;
-    width: 100%;
-    padding:10px 10px 3px 10px;
-    background-color: var(--text-display-area-back-color);
-    display: flex;
-    align-items: flex-end;
-    justify-content: end;
-    flex-direction: column;
-    flex-wrap: wrap;
-}
-
-.button-area{
-    display: flex;
-    flex-direction: column;
-    padding:15px 30px;
-}
-
-.button-row{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    padding-bottom: 10px;
-}
-
-.button{
-    border: 1px solid rgb(90, 139, 174);
-    height:50px;
-    width: 50px;
-    display: inline-block;
-    background: var(--button-background-color);
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    box-shadow:var(--button-shadow); 
-}
-
-.equal{
-    background:var(--equal-button-background-color);
-}
-.num{
-    background: var(--num-button-background-color);
-}
-.button P{
-    color:white;
-    font-weight: 500;
-    padding-top: 12px;
-    font-size: 2rem;
-}
-
-</style>
-
-<style>
-    .main-text , .sub-text{
-        color:var(--main-text-color);
-        font-size: 35px;
-        font-weight: 500;
-        /* margin-bottom: 5px !important;
-        margin-right: 20px !important; */
-        display: block;
-        max-width: 100%;
-        text-align: right;
-        display: inline-block;
-        word-wrap: break-word;
-    }
-    .sub-text{
-        color:var(--sub-text-color);
-        font-size: 18px;
-        font-weight: 500;
-        margin-bottom: -2px !important;
-        height: 200px;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        align-items: end;
-        justify-content: end;
-    }
-</style>
-
-<script>
-    mainText = document.getElementById('main-text');
-    subText = document.getElementById('sub-text');
-    mainText.innerText = "0"
-    let num1=0, num2=0;
-    let lastOperator = null;
-    let removeCurrent = false;
-    buttons =document.getElementsByClassName('num');
-    [...buttons].forEach(element => {
-        element.addEventListener('click',()=>{
-           
-            if(mainText.innerText == '0'){
-                mainText.innerText="";
-            }
-            if(removeCurrent == true){
-                num2 = "";
-                num1 = 0;
-                mainText.innerText = "";
-            }
-            if(element.innerText != '.' || !mainText.innerText.includes('.')){
-                removeCurrent = false;
-                mainText.innerText += element.innerText;
-                num2 += element.innerText;
-            }
-        })
-    });
-    
-
-    let percent = document.getElementById("percent").addEventListener('click',(e)=> {
-        operate("%");
-        mainText.textContent = mainText.textContent + " %" + " ";
-    });
-    let plus = document.getElementById('plus').addEventListener('click',(e)=> {
-        operate("+");
-        mainText.innerText = mainText.innerText + " + ";
-    });
-    let div = document.getElementById("div").addEventListener('click',(e)=> {
-        operate("/");
-        mainText.innerText = mainText.innerText + " / ";
-    });
-    let mul = document.getElementById('mul').addEventListener('click',(e)=> {
-        operate("*");
-        mainText.innerText = mainText.innerText + " x ";
-    });
-    let sub = document.getElementById('sub').addEventListener('click',(e)=> {
-        operate("-");
-        mainText.innerText = mainText.innerText + " - ";
-    });;
-    let equal = document.getElementById('equal').addEventListener('click',(e)=>{
-        if(num1 != 0 && lastOperator != null){
-        console.log('call equal')
-        if (lastOperator!= null) operate(lastOperator);
-        let p = document.createElement('p');
-        p.textContent = mainText.textContent + " = " + num1;
-        subText.appendChild(p,document.createElement('br'))  
-        mainText.innerText = num1;
-        
-        lastOperator = null;
-        firstTime = true;
-        removeCurrent = true;
-        console.log(lastOperator)
-        }else{
-            console.log("num1 = 0")
-        }
-        });
-
-    function operate(operator){
-        removeCurrent = false;
-        if(num1 == 0){
-            num1 = num2*1;
-            lastOperator = operator;
-            num2 ="";
-            return;
-        }
-        if (num2 == ""){
-            lastOperator = operator;
-            return;
-        }
-        console.log(operator)
-        switch(operator){
-            case '+':
-                lastOperator = operator;
-                num2 = num2*1;
-                num1 = num1+num2;
-                num2="";
-            break;
-            case '-':
-                    lastOperator = operator;
-                    num2 = num2*1;
-                    num1 = num1-num2;
-                    num2='';
-                    
-            break;
-            case '*':
-                lastOperator = operator;
-                num2 = num2*1;
-                num1 = num1*num2;
-                num2='';
-            break;
-            case '/':
-                lastOperator = operator;
-                num2 = num2*1;
-                num1 = num1/num2;
-                num2="";
-            break;
-            case '%':
-                lastOperator = operator;
-                num2 = num2*1;
-                num1 = (num2/num1)*100;
-                num2="";
-            break;
-        }
-        console.log("num1" ,num1);
-    }
-
-
-    let clear = document.getElementById("C").addEventListener(('click'),(e)=>{
-        num1 = num2 = 0;
-        mainText.innerText = "0";
-        subText.innerText = ""
-        lastOperator = null;
-    });
-
-    let del = document.getElementById('del').addEventListener(('click'),(e)=>{
-        mainText.innerText = mainText.innerText.substring(0,mainText.innerText.length-1);
-    });;
-
-
-
-
-
-</script>
+<script src="main.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
    
