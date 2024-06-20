@@ -16,41 +16,40 @@ buttons =document.getElementsByClassName('num');
             num1 = 0;
             mainText.innerText = "";
         }
-        if(element.innerText != '.' || !mainText.innerText.includes('.')){
+        if(element.innerText != '.' || !mainText.innerText.includes('.')) {
             removeCurrent = false;
             mainText.innerText += element.innerText;
             num2 += element.innerText;
+            console.log("entered num 2 : ", num2);
         }
     })
 });
 
 
 let percent = document.getElementById("percent").addEventListener('click',(e)=> {
-    operate("%");
-    mainText.textContent = mainText.textContent + " %" + " ";
+    operate("%","%");
 });
 let plus = document.getElementById('plus').addEventListener('click',(e)=> {
-    operate("+");
-    mainText.innerText = mainText.innerText + " + ";
+    operate("+","+");
 });
 let div = document.getElementById("div").addEventListener('click',(e)=> {
-    operate("/");
+    operate("/","/");
     mainText.innerText = mainText.innerText + " / ";
 });
 let mul = document.getElementById('mul').addEventListener('click',(e)=> {
-    operate("*");
-    mainText.innerText = mainText.innerText + " x ";
+    operate("*","X");
 });
 let sub = document.getElementById('sub').addEventListener('click',(e)=> {
-    operate("-");
-    mainText.innerText = mainText.innerText + " - ";
+    operate("-","-");
+    
 });;
 let equal = document.getElementById('equal').addEventListener('click',(e)=>{
-    if(num1 != 0 && lastOperator != null){
+    if(num1 != 0 && lastOperator != null && !"+-%X/".includes(mainText.innerText[mainText.innerText.length-1])){
     console.log('call equal')
-    if (lastOperator!= null) operate(lastOperator);
+    if (lastOperator!= null) operate(lastOperator, "=");
     let p = document.createElement('p');
-    p.textContent = mainText.textContent + " = " + num1;
+    let txt = mainText.innerText;
+    p.textContent = mainText.textContent + num1;
     subText.appendChild(p,document.createElement('br'))  
     mainText.innerText = num1;
     
@@ -63,7 +62,14 @@ let equal = document.getElementById('equal').addEventListener('click',(e)=>{
     }
     });
 
-function operate(operator){
+function operate(operator , insert){
+    if(mainText.innerText == '0' || "+-%X/".includes(mainText.innerText[mainText.innerText.length-1])){
+        console.log("invalid")
+        return;
+    }
+    mainText.innerText += insert;
+    console.log('enter')
+    
     removeCurrent = false;
     if(num1 == 0){
         num1 = num2*1;
@@ -77,6 +83,7 @@ function operate(operator){
     }
     console.log(operator)
     switch(operator){
+        
         case '+':
             lastOperator = operator;
             num2 = num2*1;
